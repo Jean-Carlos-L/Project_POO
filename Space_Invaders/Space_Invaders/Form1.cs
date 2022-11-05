@@ -8,22 +8,57 @@ namespace Space_Invaders
         public Form1()
         {
             InitializeComponent();
-            pictureBoxCreate();
+            GeneratorAlien1();
+            GeneratorAlien2();
+            GeneratorAlien3();
         }
 
-        public void pictureBoxCreate()
+        public void GeneratorAlien1()
         {
-            string basePath = Environment.CurrentDirectory;
-            string relativePath = "../../../assets/img/nave.gif";
-            string finalPath = Path.GetFullPath(relativePath, basePath);
-            PictureBox pictureImage = new PictureBox();
-            pictureImage.Image = Image.FromFile(finalPath);
-            pictureImage.Location = new System.Drawing.Point(100, 100);
-            pictureImage.Size = new System.Drawing.Size(100, 100);
-            Controls.Add(pictureImage);
-            System.Diagnostics.Debug.WriteLine(finalPath);
+            for(int i = 0; i < 5; i++)
+            {
+                Alien1 alien1 = new (i, "alien_1.gif", CustomLocation(i, 350), 100, CustomSize(80, 80));
+                Controls.Add(alien1.CreatePiece());
+            }
         }
-        
-        
+
+        public void GeneratorAlien2()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+            
+                Alien2 alien2 = new(i, "alien_2.gif", CustomLocation(i, 200), 200, CustomSize(80, 80));
+                Controls.Add(alien2.CreatePiece());
+            }
+        }
+
+        public void GeneratorAlien3()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Alien3 alien3 = new (i, "alien_3.gif", CustomLocation(i, 50), 100, CustomSize(80, 80));
+                Controls.Add(alien3.CreatePiece());
+            }
+        }
+
+        private static int[] CustomSize(int width, int height)
+        {
+            int[] size = new int[2];
+            size[0] = width;
+            size[1] = height;
+
+            return size;
+        }
+
+        private static int[] CustomLocation(int index, int y)
+        {
+            int[] location = new int[2];
+            location[0] = (index + 1) * 200;
+            location[1] = y;
+
+            return location;
+        }
+
+
     }
 }
