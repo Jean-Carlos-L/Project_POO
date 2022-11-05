@@ -16,3 +16,21 @@ C:\Users\yanca\OneDrive - correounivalle.edu.co\Materias\Periodo 202202\Programa
 C:\Users\yanca\OneDrive - correounivalle.edu.co\Materias\Periodo 202202\Programacion POO\Project\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.pdb
 C:\Users\yanca\OneDrive - correounivalle.edu.co\Materias\Periodo 202202\Programacion POO\Project\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.genruntimeconfig.cache
 C:\Users\yanca\OneDrive - correounivalle.edu.co\Materias\Periodo 202202\Programacion POO\Project\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\ref\Space_Invaders.dll
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\bin\Debug\net6.0-windows\Space_Invaders.exe
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\bin\Debug\net6.0-windows\Space_Invaders.deps.json
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\bin\Debug\net6.0-windows\Space_Invaders.runtimeconfig.json
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\bin\Debug\net6.0-windows\Space_Invaders.dll
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\bin\Debug\net6.0-windows\Space_Invaders.pdb
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.Form1.resources
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.Properties.Resources.resources
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.csproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.dll
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\refint\Space_Invaders.dll
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.pdb
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.genruntimeconfig.cache
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\ref\Space_Invaders.dll
