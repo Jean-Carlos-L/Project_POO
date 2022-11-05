@@ -26,8 +26,7 @@ namespace Space_Invaders
         {
             for (int i = 0; i < 5; i++)
             {
-            
-                Alien2 alien2 = new(i, "alien_2.gif", CustomLocation(i, 200), 200, CustomSize(80, 80));
+                Alien2 alien2 = new (i, "alien_2.gif", CustomLocation(i, 200), 200, CustomSize(80, 80));
                 Controls.Add(alien2.CreatePiece());
             }
         }
