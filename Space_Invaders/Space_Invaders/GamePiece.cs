@@ -27,8 +27,7 @@ namespace Space_Invaders
 
         public PictureBox CreatePiece()
         {
-            PictureBox pictureBox = new PictureBox();
-            System.Diagnostics.Debug.WriteLine(image);
+            PictureBox pictureBox = new ();
             pictureBox.Image = Image.FromFile(image);
             pictureBox.Location = new System.Drawing.Point(location[0], location[1]);
             pictureBox.Size = new System.Drawing.Size(size[0], size[1]);
