@@ -1,63 +1,83 @@
 using Microsoft.VisualBasic;
 using System.Reflection;
+using System.Timers;
 
 namespace Space_Invaders
 {
     public partial class Form1 : Form
     {
+        PictureBox PBnave;
+        Nave nave;
         public Form1()
         {
             InitializeComponent();
             GeneratorAlien1();
             GeneratorAlien2();
             GeneratorAlien3();
+            GeneratorNave();
         }
 
         public void GeneratorAlien1()
         {
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 6; i++)
             {
-                Alien1 alien1 = new (i, "alien_1.gif", CustomLocation(i, 350), 100, CustomSize(80, 80));
+                Alien1 alien1 = new (i, "alien_1.gif", 100, GamePiece.CustomLocation(i, 300), GamePiece.CustomSize(80, 80));
+                alien1.CreateTimer();
                 Controls.Add(alien1.CreatePiece());
             }
         }
 
         public void GeneratorAlien2()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
-                Alien2 alien2 = new (i, "alien_2.gif", CustomLocation(i, 200), 200, CustomSize(80, 80));
+                Alien2 alien2 = new(i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 200), GamePiece.CustomSize(80, 80));
+                alien2.CreateTimer();
                 Controls.Add(alien2.CreatePiece());
             }
         }
 
         public void GeneratorAlien3()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
-                Alien3 alien3 = new (i, "alien_3.gif", CustomLocation(i, 50), 100, CustomSize(80, 80));
+                Alien3 alien3 = new(i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 100), GamePiece.CustomSize(80, 80));
+                alien3.CreateTimer();
                 Controls.Add(alien3.CreatePiece());
             }
         }
 
-        private static int[] CustomSize(int width, int height)
+        public void GeneratorNave()
         {
-            int[] size = new int[2];
-            size[0] = width;
-            size[1] = height;
-
-            return size;
+            nave = new(1, "nave.gif", 300, GamePiece.CustomLocation(2, 550), GamePiece.CustomSize(100, 100));
+            PBnave = nave.CreatePiece();
+            Controls.Add(PBnave);
         }
 
-        private static int[] CustomLocation(int index, int y)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            int[] location = new int[2];
-            location[0] = (index + 1) * 200;
-            location[1] = y;
-
-            return location;
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    nave.MoveNave("left", PBnave, nave);
+                    break;
+                case Keys.Right:
+                    nave.MoveNave("right", PBnave, nave);
+                    break;
+            }
         }
 
-
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                case 'a':
+                    nave.MoveNave("left", PBnave, nave);
+                    break;
+                case 'd':
+                    nave.MoveNave("right", PBnave, nave);
+                    break;
+            }
+        }
     }
 }
