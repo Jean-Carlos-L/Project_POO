@@ -8,7 +8,7 @@ namespace Space_Invaders
 {
     internal class Alien2 : GamePiece
     {
-        public Alien2(int id, string image, int[] location, int life, int[] size) : base(id, image, location, life, size)
+        public Alien2(int id, string image, int life, int[] location, int[] size) : base(id, image, life, location, size)
         {
         }
     }
