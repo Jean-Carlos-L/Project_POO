@@ -9,6 +9,7 @@ namespace Space_Invaders
 {
     internal class Nave : GamePiece
     {
+        /*Creamos esta clase para inicializar la pieza nave en la cual*/
         public Nave(int id, string image, int life, int[] location, int[] size) : base(id, image, life, location,  size)
         {
         }
