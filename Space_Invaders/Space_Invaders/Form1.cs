@@ -6,8 +6,8 @@ namespace Space_Invaders
 {
     public partial class Form1 : Form
     {
-        PictureBox PBnave;
-        Nave nave;
+        private PictureBox PBnave = new PictureBox();
+        private Nave nave = new (1, "nave.gif", 300, GamePiece.CustomLocation(2, 550), GamePiece.CustomSize(100, 100));
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Space_Invaders
         {
             for(int i = 0; i < 6; i++)
             {
-                Alien1 alien1 = new (i, "alien_1.gif", 100, GamePiece.CustomLocation(i, 300), GamePiece.CustomSize(80, 80));
+                Alien1 alien1 = new (i, "alien_1.gif", 100, GamePiece.CustomLocation(i, 250), GamePiece.CustomSize(80, 80));
                 alien1.CreateTimer();
                 Controls.Add(alien1.CreatePiece());
             }
@@ -31,7 +31,7 @@ namespace Space_Invaders
         {
             for (int i = 0; i < 6; i++)
             {
-                Alien2 alien2 = new(i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 200), GamePiece.CustomSize(80, 80));
+                Alien2 alien2 = new(i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 150), GamePiece.CustomSize(80, 80));
                 alien2.CreateTimer();
                 Controls.Add(alien2.CreatePiece());
             }
@@ -41,7 +41,7 @@ namespace Space_Invaders
         {
             for (int i = 0; i < 6; i++)
             {
-                Alien3 alien3 = new(i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 100), GamePiece.CustomSize(80, 80));
+                Alien3 alien3 = new(i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 50), GamePiece.CustomSize(80, 80));
                 alien3.CreateTimer();
                 Controls.Add(alien3.CreatePiece());
             }
@@ -54,6 +54,15 @@ namespace Space_Invaders
             Controls.Add(PBnave);
         }
 
+        private void GeneratorShot()
+        {
+            int[] locationShot = new int[2];
+            locationShot[0] = PBnave.Location.X + 35;
+            locationShot[1] = 520;
+            Shot shot = new(10, "shot.png", locationShot, GamePiece.CustomSize(32, 32));
+            Controls.Add(shot.CreateShot(label1, label2));
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -63,6 +72,9 @@ namespace Space_Invaders
                     break;
                 case Keys.Right:
                     nave.MoveNave("right", PBnave, nave);
+                    break;
+                case Keys.Space:
+                    GeneratorShot();
                     break;
             }
         }
