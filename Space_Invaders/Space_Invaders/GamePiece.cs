@@ -9,11 +9,9 @@ namespace Space_Invaders
 {
     internal class GamePiece
     {
-        private static System.Timers.Timer timer;
+        private static System.Timers.Timer timer = new System.Timers.Timer();
         bool mov = true;
         int iLocation = 0;
-
-
         private string basePath = Environment.CurrentDirectory;
         private const string relativePath = "../../../assets/img/";
         public int id { get; set; }
@@ -60,7 +58,7 @@ namespace Space_Invaders
             return location;
         }
 
-        private void Move(Object source, ElapsedEventArgs e)
+        private void MoveEvent(Object source, ElapsedEventArgs e)
         {
             Move(pictureBox.Location.X, pictureBox.Location.Y);
         }
@@ -95,8 +93,8 @@ namespace Space_Invaders
 
         public void CreateTimer()
         {
-            timer = new(1000);
-            timer.Elapsed += Move;
+            timer = new(500);
+            timer.Elapsed += MoveEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
         }
