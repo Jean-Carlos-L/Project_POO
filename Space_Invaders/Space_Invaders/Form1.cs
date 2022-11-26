@@ -22,6 +22,7 @@ namespace Space_Invaders
             for(int i = 0; i < 6; i++)
             {
                 Alien1 alien1 = new (i, "alien_1.gif", 100, GamePiece.CustomLocation(i, 250), GamePiece.CustomSize(80, 80));
+                GamePiece.listAliens.Add(alien1);
                 alien1.CreateTimer();
                 Controls.Add(alien1.CreatePiece());
             }
@@ -31,7 +32,8 @@ namespace Space_Invaders
         {
             for (int i = 0; i < 6; i++)
             {
-                Alien2 alien2 = new(i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 150), GamePiece.CustomSize(80, 80));
+                Alien2 alien2 = new (i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 150), GamePiece.CustomSize(80, 80));
+                GamePiece.listAliens.Add(alien2);
                 alien2.CreateTimer();
                 Controls.Add(alien2.CreatePiece());
             }
@@ -41,7 +43,8 @@ namespace Space_Invaders
         {
             for (int i = 0; i < 6; i++)
             {
-                Alien3 alien3 = new(i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 50), GamePiece.CustomSize(80, 80));
+                Alien3 alien3 = new (i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 50), GamePiece.CustomSize(80, 80));
+                GamePiece.listAliens.Add(alien3);
                 alien3.CreateTimer();
                 Controls.Add(alien3.CreatePiece());
             }
@@ -90,6 +93,11 @@ namespace Space_Invaders
                     nave.MoveNave("right", PBnave, nave);
                     break;
             }
+        }
+
+        public void Removed()
+        {
+            Controls.Remove(GamePiece.listAliens[0].pictureBox);
         }
     }
 }

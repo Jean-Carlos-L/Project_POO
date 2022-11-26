@@ -14,13 +14,17 @@ namespace Space_Invaders
         int iLocation = 0;
         private string basePath = Environment.CurrentDirectory;
         private const string relativePath = "../../../assets/img/";
+
+        public static List<GamePiece> listAliens = new List<GamePiece>();
+        public static int contador = 0;
+
         public int id { get; set; }
         public string image { get; set; }
         public int life { get; set; }
         public int[] location { get; set; }
         public int[] size { get; set; }
 
-        private PictureBox pictureBox = new();
+        public PictureBox pictureBox = new();
 
 
         public GamePiece(int id, string image, int life, int[] location, int[] size)
