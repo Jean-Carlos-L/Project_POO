@@ -24,7 +24,9 @@ namespace Space_Invaders
         private PictureBox PBnave { get; set; }
         private List<PictureBox> listLifes { get; set; }
 
-        public Shot(int damage, string image, int[] location, int[] size, bool typePiece, List<PictureBox> listLifes)
+        private Form2 form2;
+
+        public Shot(int damage, string image, int[] location, int[] size, bool typePiece, List<PictureBox> listLifes, Form2 form2)
         {
             this.damage = damage;
             this.image = Path.GetFullPath(relativePath + image, basePath);
@@ -36,6 +38,7 @@ namespace Space_Invaders
             this.pictureBox = new PictureBox();
             this.PBnave = new PictureBox();
             this.listLifes = listLifes;
+            this.form2 = form2;
         }
 
         public PictureBox CreateShot(Label label1, Label label2, PictureBox PBnave)
@@ -90,29 +93,34 @@ namespace Space_Invaders
         {
             foreach(GamePiece alien in GamePiece.listAliens)
             {
-                label2.Text = GamePiece.listAliens.Count.ToString();
-                if(pictureBox.Location.Y < 250)
+                label2.Text = GamePiece.contador.ToString();
+                if(pictureBox.Bounds.IntersectsWith(alien.pictureBox.Bounds))
                 {
-                    if(pictureBox.Bounds.IntersectsWith(alien.pictureBox.Bounds))
+                    if(GamePiece.contador < GamePiece.listAliens.Count - 1)
                     {
-                        if(GamePiece.contador < GamePiece.listAliens.Count - 1)
-                        {
-                            
-                            pictureBox.Visible = false;
-                            alien.pictureBox.Visible = false;
-                            alien.pictureBox.Location = new Point(0, 0);
-                            GamePiece.contador += 1;
-                        }
-                        else
-                        {
-                            pictureBox.Visible = false;
-                            alien.pictureBox.Visible = false;
-                            alien.pictureBox.Location = new Point(0, 0);
-                            label1.Text = "Ganaste";                     
-                        }
-
-                        timer.Stop();
+                        //form2.Controls.Remove(alien.pictureBox);
+                        //form2.Controls.Remove(pictureBox);
+                        //alien.pictureBox.Location = new Point(0, 100);
+                        pictureBox.Dispose();
+                        alien.pictureBox.Dispose();
+                        GamePiece.contador += 1;
                     }
+                    else
+                    {
+                       
+                        form2.Controls.Remove(alien.pictureBox);
+                        form2.Controls.Remove(pictureBox);
+                        alien.pictureBox.Location = new Point(0, 100);
+                       
+                        label1.Text = "Ganaste";
+                        form2.Close();
+                        Form3 form = new Form3();
+                        form.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "img_win.jpg", basePath));
+                        form.ShowDialog();
+                        GamePiece.contador = 0;
+                    }
+
+                    timer.Stop();
                 }
             }
         }
@@ -132,7 +140,13 @@ namespace Space_Invaders
                 else if (listLifes[2].Visible == true)
                 {
                     listLifes[2].Visible = false;
+                    form2.Visible = false;
+                    Form3 form = new Form3();
+                    form.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "img_lose.jpg", basePath));
+                    form.ShowDialog();
                     label2.Text = "Perdite loser";
+                    form2.Close();
+                    GamePiece.contador = 0;
                 }
                 pictureBox.Location = new Point(0, 0);
                 pictureBox.Visible = false;
