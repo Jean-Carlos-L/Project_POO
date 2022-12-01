@@ -34,3 +34,5 @@ C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6
 C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.pdb
 C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\ref\Space_Invaders.dll
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.Form2.resources
+C:\Users\LENOVO\Desktop\Project_POO\Space_Invaders\Space_Invaders\obj\Debug\net6.0-windows\Space_Invaders.Form3.resources
