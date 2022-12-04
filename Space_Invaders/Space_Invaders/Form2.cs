@@ -32,8 +32,8 @@ namespace Space_Invaders
             {
                 Alien1 alien1 = new(i, "alien_1.gif", 100, GamePiece.CustomLocation(i, 250), GamePiece.CustomSize(80, 80));
                 GamePiece.listAliens.Add(alien1);
-                alien1.CreateTimer();
                 Controls.Add(alien1.CreatePiece());
+                alien1.CreateTimer();
             }
         }
 
@@ -43,8 +43,8 @@ namespace Space_Invaders
             {
                 Alien2 alien2 = new(i, "alien_2.gif", 100, GamePiece.CustomLocation(i, 150), GamePiece.CustomSize(80, 80));
                 GamePiece.listAliens.Add(alien2);
-                alien2.CreateTimer();
                 Controls.Add(alien2.CreatePiece());
+                alien2.CreateTimer();
             }
         }
 
@@ -54,8 +54,8 @@ namespace Space_Invaders
             {
                 Alien3 alien3 = new(i, "alien_3.gif", 100, GamePiece.CustomLocation(i, 50), GamePiece.CustomSize(80, 80));
                 GamePiece.listAliens.Add(alien3);
-                alien3.CreateTimer();
                 Controls.Add(alien3.CreatePiece());
+                alien3.CreateTimer();
             }
         }
 

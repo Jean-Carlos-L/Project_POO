@@ -9,7 +9,7 @@ namespace Space_Invaders
 {
     internal class GamePiece
     {
-        private static System.Timers.Timer timer = new System.Timers.Timer();
+        public static System.Timers.Timer timer = new System.Timers.Timer();
         bool mov = true;
         int iLocation = 0;
         private string basePath = Environment.CurrentDirectory;
