@@ -39,8 +39,8 @@ namespace Space_Invaders
         public PictureBox CreatePiece()
         {
             pictureBox.Image = Image.FromFile(image);
-            pictureBox.Location = new System.Drawing.Point(location[0], location[1]);
-            pictureBox.Size = new System.Drawing.Size(size[0], size[1]);
+            pictureBox.Location = new Point(location[0], location[1]);
+            pictureBox.Size = new Size(size[0], size[1]);
             return pictureBox;
         }
 
@@ -83,7 +83,7 @@ namespace Space_Invaders
             }
             else
             {
-                if(iLocation == -4)
+                if(iLocation == -13)
                 {
                     mov = true;
                 }
@@ -92,7 +92,7 @@ namespace Space_Invaders
                 iLocation -= 1;
             }
 
-            pictureBox.Location = new System.Drawing.Point(location1[0], location1[1]);
+            pictureBox.Location = new Point(location1[0], location1[1]);
         }
 
         public void CreateTimer()

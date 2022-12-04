@@ -98,13 +98,15 @@ namespace Space_Invaders
                 {
                     if(GamePiece.contador < GamePiece.listAliens.Count - 1)
                     {
-                        
-                        form2.Controls.Remove(pictureBox);
-                        pictureBox.Dispose();
+
+                        //form2.Controls.Remove(pictureBox);
+                        //pictureBox.Dispose();
+                        pictureBox.Visible = false;
                         pictureBox.Location = new Point(0, 800);
 
-                        form2.Controls.Remove(alien.pictureBox);
-                        alien.pictureBox.Dispose();
+                        //form2.Controls.Remove(alien.pictureBox);
+                        //alien.pictureBox.Dispose();
+                        alien.pictureBox.Visible = false;
                         alien.pictureBox.Location = new Point(0, 0);
                        
 
@@ -114,11 +116,13 @@ namespace Space_Invaders
                     {
 
                         // Eliminacion del disparo del form
-                        form2.Controls.Remove(pictureBox);
+                        //form2.Controls.Remove(pictureBox);
+                        pictureBox.Visible = false;
                         pictureBox.Location = new Point(0, 800);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
 
                         // Eliminacion del alien del form
+                        alien.pictureBox.Visible = false;
                         alien.pictureBox.Location = new Point(0, 0);
                         form2.Close();
 
