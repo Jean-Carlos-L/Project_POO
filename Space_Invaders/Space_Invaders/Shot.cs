@@ -61,7 +61,7 @@ namespace Space_Invaders
 
         private void Shoot()
         {
-            //Método para 
+            //Método para validar el disparo tanto del jugador como de los aliens
             if (typePiece)
             {
                pictureBox.Location = new Point(pictureBox.Location.X, pictureBox.Location.Y - 10);
