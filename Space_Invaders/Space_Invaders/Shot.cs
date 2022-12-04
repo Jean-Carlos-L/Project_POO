@@ -76,6 +76,7 @@ namespace Space_Invaders
 
         private void ShootEvent(Object source, ElapsedEventArgs e)
         {
+            //Metodo para el disparo de los alien y del jugador.
             if(pictureBox.Location.Y > 0)
             {
                 Shoot();
@@ -89,6 +90,7 @@ namespace Space_Invaders
 
         private void CreateTimer()
         {
+            //Método para crear el timer para el disparo autómatico de los aliens
             timer = new(50);
             timer.Elapsed += ShootEvent;
             timer.AutoReset = true;
