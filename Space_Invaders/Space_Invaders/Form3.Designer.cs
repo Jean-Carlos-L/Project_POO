@@ -28,20 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            this.btnGoMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnGoMenu
+            // 
+            this.btnGoMenu.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGoMenu.Location = new System.Drawing.Point(136, 375);
+            this.btnGoMenu.Name = "btnGoMenu";
+            this.btnGoMenu.Size = new System.Drawing.Size(200, 52);
+            this.btnGoMenu.TabIndex = 0;
+            this.btnGoMenu.Text = "Menu";
+            this.btnGoMenu.UseVisualStyleBackColor = true;
+            this.btnGoMenu.Click += new System.EventHandler(this.btnGoMenu_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnGoMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Space Invaders";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Button btnGoMenu;
     }
 }

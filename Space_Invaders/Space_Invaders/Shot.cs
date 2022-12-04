@@ -10,7 +10,7 @@ namespace Space_Invaders
 {
     internal class Shot
     {
-        private System.Timers.Timer timer;
+        private System.Timers.Timer timer = new System.Timers.Timer();
         private string basePath = Environment.CurrentDirectory;
         private const string relativePath = "../../../assets/img/";
         public int damage { get; set; }
@@ -98,30 +98,45 @@ namespace Space_Invaders
                 {
                     if(GamePiece.contador < GamePiece.listAliens.Count - 1)
                     {
-                        //form2.Controls.Remove(alien.pictureBox);
-                        //form2.Controls.Remove(pictureBox);
-                        //alien.pictureBox.Location = new Point(0, 100);
+                        
+                        form2.Controls.Remove(pictureBox);
                         pictureBox.Dispose();
+                        pictureBox.Location = new Point(0, 800);
+
+                        form2.Controls.Remove(alien.pictureBox);
                         alien.pictureBox.Dispose();
+                        alien.pictureBox.Location = new Point(0, 0);
+                       
+
                         GamePiece.contador += 1;
                     }
                     else
                     {
-                       
-                        form2.Controls.Remove(alien.pictureBox);
+
+                        // Eliminacion del disparo del form
                         form2.Controls.Remove(pictureBox);
-                        alien.pictureBox.Location = new Point(0, 100);
-                       
-                        label1.Text = "Ganaste";
+                        pictureBox.Location = new Point(0, 800);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+                        // Eliminacion del alien del form
+                        alien.pictureBox.Location = new Point(0, 0);
                         form2.Close();
-                        Form3 form = new Form3();
-                        form.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "img_win.jpg", basePath));
-                        form.ShowDialog();
+
+                        // Genera el form ganador
+                        GeneratorNewForm3("img_win.jpg");
+
+                        // Limpia la lista y el contador
+                        GamePiece.listAliens.Clear();
                         GamePiece.contador = 0;
                     }
 
                     timer.Stop();
                 }
+            }
+
+            if(pictureBox.Location.Y < -1)
+            {
+                timer.Stop();
             }
         }
 
@@ -141,12 +156,10 @@ namespace Space_Invaders
                 {
                     listLifes[2].Visible = false;
                     form2.Visible = false;
-                    Form3 form = new Form3();
-                    form.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "img_lose.jpg", basePath));
-                    form.ShowDialog();
-                    label2.Text = "Perdite loser";
-                    form2.Close();
+                    
+                    GeneratorNewForm3("img_lose.jpg");
                     GamePiece.contador = 0;
+                    GamePiece.listAliens.Clear();
                 }
                 pictureBox.Location = new Point(0, 0);
                 pictureBox.Visible = false;
@@ -155,11 +168,19 @@ namespace Space_Invaders
             
             if(pictureBox.Location.Y > 800)
             {
-                pictureBox.Location = new Point(0, 50);
+                pictureBox.Location = new Point(0, 0);
                 pictureBox.Visible = false;
                 timer.Stop();
 
             }
+        }
+
+        private void GeneratorNewForm3(string result)
+        {
+            Form3 form = new Form3();
+            form.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + result, basePath));
+            form.ShowDialog();
+            form2.Close();
         }
     }
 }

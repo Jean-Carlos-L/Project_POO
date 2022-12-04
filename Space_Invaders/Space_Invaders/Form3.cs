@@ -16,5 +16,10 @@ namespace Space_Invaders
         {
             InitializeComponent();
         }
+
+        private void btnGoMenu_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
