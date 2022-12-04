@@ -12,6 +12,7 @@ namespace Space_Invaders
 {
     public partial class Form3 : Form
     {
+        //Formulario que mostará la pantalla al ganar o perder.
         public Form3()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace Space_Invaders
 
         private void btnGoMenu_Click(object sender, EventArgs e)
         {
+            //Evento para cerrar este formulario al dar click en el botón
             Close();
         }
     }
