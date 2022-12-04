@@ -6,7 +6,7 @@ namespace Space_Invaders
 {
     public partial class Form1 : Form
     {
-        
+        // Formulario principal donde se mostrará el inicio del juego.
         public Form1()
         {
             InitializeComponent();
