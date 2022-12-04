@@ -14,6 +14,7 @@ namespace Space_Invaders
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //si el jugador da click en el button se dará inicio al juego.
             Form2 form2 = new Form2();
             form2.ShowDialog();
         }
