@@ -8,6 +8,7 @@ namespace Space_Invaders
 {
     internal class Alien2 : GamePiece
     {
+        //Clase Alien2 que hereda de GamePiece
         public Alien2(int id, string image, int life, int[] location, int[] size) : base(id, image, life, location, size)
         {
         }
