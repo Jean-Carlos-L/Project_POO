@@ -78,10 +78,11 @@ namespace Space_Invaders
             Move(pictureBox.Location.X, pictureBox.Location.Y);
         }
 
+       
         private void Move(int index, int y)
         {
             //Método para validar el movimiento de las clases alien
-
+            
             //Creamos un array de tamaño dos para almacenar el X y Y de la location
             int[] location1 = new int[2];
             //Validamos si nuestra variable mov es true o false
@@ -107,6 +108,7 @@ namespace Space_Invaders
                 location1[1] = y;
                 iLocation -= 1;
             }
+
             //Devolvemos la posición almacenada en el array Location1[]
             pictureBox.Location = new Point(location1[0], location1[1]);
         }
