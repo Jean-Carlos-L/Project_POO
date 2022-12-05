@@ -69,6 +69,11 @@ namespace Space_Invaders
 
         private void Move(int index, int y)
         {
+            Move(index, y, pictureBox);
+        }
+
+        private void Move(int index, int y, PictureBox pictureBox)
+        {
             int[] location1 = new int[2];
 
             if (mov)
@@ -92,7 +97,7 @@ namespace Space_Invaders
                 iLocation -= 1;
             }
 
-            pictureBox.Location = new Point(location1[0], location1[1]);
+            pictureBox.Location = new Point(location1[0], y: location1[1]);
         }
 
         public void CreateTimer()
